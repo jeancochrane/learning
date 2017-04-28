@@ -1,0 +1,3 @@
+[submodule "stats/textbook"]
+	path = stats/textbook
+	url = https://github.com/jeancochrane/ThinkStats2
