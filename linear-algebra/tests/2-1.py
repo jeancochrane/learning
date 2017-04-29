@@ -47,6 +47,10 @@ class TestVectorOperations(unittest.TestCase):
         self.assertEqual(round(v.dot(w), 3), -41.382)
 
     def test_dot_product_association(self):
+        """
+        The dot product is associative, meaning it shouldn't matter what
+        order the vectors go in.
+        """
         v = Vector([7, 4])
         w = Vector([-8, 6.776])
         self.assertEqual(v.dot(w), w.dot(v))
@@ -60,6 +64,53 @@ class TestVectorOperations(unittest.TestCase):
         v = Vector([7.35, 0.221, 5.188])
         w = Vector([2.751, 8.259, 3.985])
         self.assertEqual(round(v.inner_angle(w, degrees=True), 3), 60.276)
+
+    def test_orthogonality(self):
+        v = Vector([-7.579, -7.88])
+        w = Vector([22.737, 23.64])
+        self.assertFalse(v.is_orthogonal(w))
+
+        v = Vector([-2.029, 9.97, 4.172])
+        w = Vector([-9.231, -6.639, -7.245])
+        self.assertFalse(v.is_orthogonal(w))
+
+        v = Vector([-2.328, -7.284, -1.214])
+        w = Vector([-1.821, 1.072, -2.94])
+        self.assertTrue(v.is_orthogonal(w))
+
+        v = Vector([2.118, 4.827])
+        w = Vector([0, 0])
+        self.assertTrue(v.is_orthogonal(w))
+
+    def test_parallelism(self):
+        v = Vector([-7.579, -7.88])
+        w = Vector([22.737, 23.64])
+        self.assertTrue(v.is_parallel(w))
+
+        v = Vector([-2.029, 9.97, 4.172])
+        w = Vector([-9.231, -6.639, -7.245])
+        self.assertFalse(v.is_parallel(w))
+
+        v = Vector([-2.328, -7.284, -1.214])
+        w = Vector([-1.821, 1.072, -2.94])
+        self.assertFalse(v.is_parallel(w))
+
+        v = Vector([2.118, 4.827])
+        w = Vector([0, 0])
+        self.assertTrue(v.is_parallel(w))
+
+    def test_identity_vector_orthogonality_and_parallelism(self):
+        """
+        The zero vector is the only vector that is both orthogonal and
+        parallel to itself.
+        """
+        v = Vector([0, 0, 0])
+        self.assertTrue(v.is_orthogonal(v))
+        self.assertTrue(v.is_parallel(v))
+
+        w = Vector([4, 5, 6])
+        self.assertFalse(w.is_orthogonal(w))
+        self.assertTrue(w.is_parallel(w))
 
 if __name__ == '__main__':
     unittest.main()

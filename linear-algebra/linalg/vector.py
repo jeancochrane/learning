@@ -10,11 +10,11 @@ class Vector(object):
             self.coordinates = tuple(coordinates)
             self.dimension = len(coordinates)
 
-        except ValueError:
-            raise ValueError('The coordinates must be nonempty')
+        except ValueError as e:
+            raise ValueError('Vector coordinates must be non-null.') from e
 
         except TypeError:
-            raise TypeError('The coordinates must be an iterable')
+            raise TypeError('Vector coordinates must be an iterable.') from e
 
     def get_coordinates(self):
         """
@@ -47,8 +47,8 @@ class Vector(object):
         try:
             assert isinstance(v, Vector)
         except AssertionError as e:
-            raise TypeError("Vectors can only sum " +
-            "with other vectors.").with_traceback(e.__traceback__)
+            raise TypeError("Vectors can only add " +
+                            "with other vectors.") from e
         return Vector([si + vi for si, vi in zip(self.get_coordinates(),
                                                  v.get_coordinates())])
 
@@ -60,7 +60,7 @@ class Vector(object):
             assert isinstance(v, Vector)
         except AssertionError as e:
             raise TypeError("Vectors can only subtract " +
-            "from other vectors.").with_traceback(e.__traceback__)
+                            "from other vectors.") from e
         return Vector([si - vi for si, vi in zip(self.get_coordinates(),
                                                  v.get_coordinates())])
 
@@ -142,8 +142,7 @@ class Vector(object):
         except AssertionError as e:
             raise AssertionError("You can only compute the dot product" +
                                  " of two vectors, not a vector and %s."
-                                 % type(v).__name__).with_traceback(
-                e.__traceback__)
+                                 % type(v).__name__) from e
         return sum([vi * wi for vi, wi in zip(self.get_coordinates(),
                                               v.get_coordinates())])
 
@@ -166,10 +165,95 @@ class Vector(object):
         except AssertionError as e:
             raise AssertionError("You can only compute the inner angle" +
                                  " of two vectors, not a vector and %s."
-                                 % type(v).__name__).with_traceback(
-                e.__traceback__)
-        rad_angle = math.acos(self.dot(v) / (self.magnitude() * v.magnitude()))
+                                 % type(v).__name__) from e
+
+        try:
+            rad_angle = math.acos(self.dot(v) / (self.magnitude() * v.magnitude()))
+        except ZeroDivisionError as e:
+            raise ZeroDivisionError("You cannot compute the inner angle" +
+                                    " of the zero vector.") from e
+
         if not degrees:
             return rad_angle
         else:
             return rad_angle * (180 / math.pi)
+
+    def is_orthogonal(self, v):
+        """
+        Determine whether or not two vectors are orthogonal (perpendicular).
+
+        Two vectors are orthogonal when their dot product is 0.
+
+        --------
+
+        @params:
+            - v: a vector (Vector)
+        @returns:
+            - whether the vectors are orthogonal (bool)
+        """
+        try:
+            assert isinstance(v, Vector)
+        except AssertionError as e:
+            raise AssertionError("You can only determine the orthogonality" +
+                                 " of two vectors, not a vector and %s."
+                                 % type(v).__name__) from e
+
+        return (round(self.dot(v), 7) == 0)
+
+    def is_parallel(self, v):
+        """
+        Determine whether or not two vectors are parallel.
+
+        Two vectors are parallel when their inner angle is 0 or pi/2 radians
+        (0 or 180 degrees).
+
+        --------
+
+        @params:
+            - v: a vector (Vector)
+        @returns:
+            - whether the vectors are parallel (bool)
+        """
+        try:
+            assert isinstance(v, Vector)
+        except AssertionError as e:
+            raise AssertionError("You can only determine the parallelism" +
+                                 " of two vectors, not a vector and %s."
+                                 % type(v).__name__) from e
+        try:
+            return (round(self.inner_angle(v), 7) == 0 or
+                    round(self.inner_angle(v, degrees=True), 7) == 180)
+        except ZeroDivisionError as e:
+            if str(e) == ("You cannot compute the inner angle" +
+                          " of the zero vector."):
+                return True
+            else:
+                raise(e)
+
+    def project(self, v):
+        """
+        Project a vector onto another vector v.
+
+        Projection is a convenient way to decompose two vectors. Geometrically,
+        you can imagine it as "assuming the perspective" of one vector, and
+        viewing the other vector from that lens.
+
+        Given two vectors, v and w, the projection of v onto w is defined
+        mathematically by taking the normalization of w (its direction) and
+        scaling it by the dot product of v and the normalization of w (the
+        length of v "seen from the perspective" of w).
+        """
+        pass
+
+    def orthogonal_component(self, v):
+        """
+        Determine the orthogonal component of a vector with another vector v.
+
+        Given two vectors, v and w, the orthogonal component of v is defined as
+        the vector that sums with v.project(w) to produce v.
+
+        In this way, the parallel component of v (its projection onto w) and
+        the orthogonal component of v allow us to "decompose" v on w, that is,
+        to define v strictly in terms of w.
+        """
+        pass

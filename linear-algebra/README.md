@@ -9,7 +9,7 @@ This repo catalogues my progress of refreshing linear algebra through code. It f
 - [X] 1. Basic vector operations
 - [X] 2. Magnitude and direction
 - [X] 3. Dot products
-- [ ] 4. Parallel and orthogonal vectors
+- [X] 4. Parallel and orthogonal vectors
 - [ ] 5. Projections
 - [ ] 6. Cross products
 
