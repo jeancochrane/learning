@@ -31,6 +31,10 @@ class TestVectorOperations(unittest.TestCase):
         c = 7.41
         self.assertEqual(a * c, Vector([12.38211, -7.49892, -2.35638]))
 
+    def test_vector_rounding(self):
+        v = Vector([1.2345, 6.6789])
+        self.assertEqual(v.round(2), Vector([1.23, 6.68]))
+
     def test_vector_magnitude(self):
         v = Vector([-0.221, 7.437])
         self.assertEqual(round(v.magnitude(), 3), 7.440)
@@ -111,6 +115,32 @@ class TestVectorOperations(unittest.TestCase):
         w = Vector([4, 5, 6])
         self.assertFalse(w.is_orthogonal(w))
         self.assertTrue(w.is_parallel(w))
+
+    def test_vector_projections(self):
+        """
+        Testing vector projection, orthogonal components, and
+        decomposition.
+        """
+        v = Vector([3.039, 1.879])
+        b = Vector([0.825, 2.036])
+        proj = v.project(b)
+        self.assertEqual(proj.round(3), Vector([1.083, 2.672]))
+
+        v = Vector([-9.88, -3.264, -8.159])
+        b = Vector([-2.155, -9.353, -9.473])
+        orth = v.orthogonal_component(b)
+        try:
+            self.assertEqual(orth.round(3), Vector([-8.350, 3.376, -1.434]))
+        except AssertionError as e:
+            print(orth.round(3))
+            print(Vector([-8.350, 3.376, -1.434]))
+            raise(e)
+
+        v = Vector([3.009, -6.172, 3.692, -2.51])
+        b = Vector([6.404, -9.144, 2.759, 8.718])
+        v_decomposed = (v.project(b) +
+                        v.orthogonal_component(b))
+        self.assertEqual(v, v_decomposed.round(3))
 
 if __name__ == '__main__':
     unittest.main()

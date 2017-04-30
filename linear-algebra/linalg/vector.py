@@ -97,11 +97,17 @@ class Vector(object):
 
     def normalized(self):
         """
-        The direction of a vector V is defined as the corresponding unit
+        The normalization of a vector V is defined as the corresponding unit
         vector W that, when scaled by the magnitude of V, produces V.
 
+        Geometrically, normalizing a vector returns a unit vector that
+        describes its its *direction* in space.
+
+        --------
+
         @params: none
-        @returns: vector
+        @returns:
+            - normalized vector
         """
         return Vector([x/self.magnitude() for x in self.get_coordinates()])
 
@@ -140,9 +146,9 @@ class Vector(object):
         try:
             assert isinstance(v, Vector)
         except AssertionError as e:
-            raise AssertionError("You can only compute the dot product" +
-                                 " of two vectors, not a vector and %s."
-                                 % type(v).__name__) from e
+            raise TypeError("You can only compute the dot product" +
+                            " of two vectors, not a vector and %s."
+                            % type(v).__name__) from e
         return sum([vi * wi for vi, wi in zip(self.get_coordinates(),
                                               v.get_coordinates())])
 
@@ -163,12 +169,13 @@ class Vector(object):
         try:
             assert isinstance(v, Vector)
         except AssertionError as e:
-            raise AssertionError("You can only compute the inner angle" +
-                                 " of two vectors, not a vector and %s."
-                                 % type(v).__name__) from e
+            raise TypeError("You can only compute the inner angle" +
+                            " of two vectors, not a vector and %s."
+                            % type(v).__name__) from e
 
         try:
-            rad_angle = math.acos(self.dot(v) / (self.magnitude() * v.magnitude()))
+            rad_angle = (math.acos(self.dot(v) /
+                        (self.magnitude() * v.magnitude())))
         except ZeroDivisionError as e:
             raise ZeroDivisionError("You cannot compute the inner angle" +
                                     " of the zero vector.") from e
@@ -194,9 +201,9 @@ class Vector(object):
         try:
             assert isinstance(v, Vector)
         except AssertionError as e:
-            raise AssertionError("You can only determine the orthogonality" +
-                                 " of two vectors, not a vector and %s."
-                                 % type(v).__name__) from e
+            raise TypeError("You can only determine the orthogonality" +
+                            " of two vectors, not a vector and %s."
+                            % type(v).__name__) from e
 
         return (round(self.dot(v), 7) == 0)
 
@@ -217,9 +224,9 @@ class Vector(object):
         try:
             assert isinstance(v, Vector)
         except AssertionError as e:
-            raise AssertionError("You can only determine the parallelism" +
-                                 " of two vectors, not a vector and %s."
-                                 % type(v).__name__) from e
+            raise TypeError("You can only determine the parallelism" +
+                            " of two vectors, not a vector and %s."
+                            % type(v).__name__) from e
         try:
             return (round(self.inner_angle(v), 7) == 0 or
                     round(self.inner_angle(v, degrees=True), 7) == 180)
@@ -242,8 +249,24 @@ class Vector(object):
         mathematically by taking the normalization of w (its direction) and
         scaling it by the dot product of v and the normalization of w (the
         length of v "seen from the perspective" of w).
+
+        --------
+
+        @params:
+            - v: a Vector
+        @returns:
+            - the Vector projected onto v
         """
-        pass
+        # Make sure v is a vector
+        try:
+            assert isinstance(v, Vector)
+        except AssertionError as e:
+            raise TypeError("You can only perform projection between" +
+                            " two vectors, not a vector and %s."
+                            % type(v).__name__) from e
+
+        # Compute the projection of this vector onto v
+        return v.normalized() * self.dot(v.normalized())
 
     def orthogonal_component(self, v):
         """
@@ -256,4 +279,31 @@ class Vector(object):
         the orthogonal component of v allow us to "decompose" v on w, that is,
         to define v strictly in terms of w.
         """
-        pass
+        # Make sure v is a vector
+        try:
+            assert isinstance(v, Vector)
+        except AssertionError as e:
+            raise TypeError("You can only find the orthogonal component" +
+                            " between two vectors, not a vector and %s."
+                            % type(v).__name__) from e
+
+        # Compute the orthogonal component of the vector
+        return Vector(self.get_coordinates()) - self.project(v)
+
+    def round(self, round_to):
+        """
+        Round a vector's elements to a certain decimal place.
+
+        @params:
+            - round_to: num decimal places to round vector elements (int)
+        @returns:
+            - the rounded vector (Vector)
+        """
+        # Make sure round_to is an int
+        try:
+            assert isinstance(round_to, int)
+        except AssertionError as e:
+            raise TypeError("A vector can only be rounded by an int, not %s."
+                            % type(round_to).__name__) from e
+
+        return Vector([round(x, round_to) for x in self.get_coordinates()])
