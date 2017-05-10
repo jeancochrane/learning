@@ -85,6 +85,24 @@ class Vector(object):
                             " with objects of type '%s', only ints or floats. "
                             % type(x).__name__)
 
+    def round(self, round_to):
+        """
+        Round a vector's elements to a certain decimal place.
+
+        @params:
+            - round_to: num decimal places to round vector elements (int)
+        @returns:
+            - the rounded vector (Vector)
+        """
+        # Make sure round_to is an int
+        try:
+            assert isinstance(round_to, int)
+        except AssertionError as e:
+            raise TypeError("A vector can only be rounded by an int, not %s."
+                            % type(round_to).__name__) from e
+
+        return Vector([round(x, round_to) for x in self.get_coordinates()])
+
     def magnitude(self):
         """
         The magnitude of a vector is defined as its "length," spatial
@@ -290,20 +308,84 @@ class Vector(object):
         # Compute the orthogonal component of the vector
         return Vector(self.get_coordinates()) - self.project(v)
 
-    def round(self, round_to):
+    def cross(self, b):
         """
-        Round a vector's elements to a certain decimal place.
+        Calculate the cross product of a vector and another vector b.
+
+        Given two 3D vectors, v and w, the cross product `v x w` defines a
+        vector with the following properties:
+            * Orthogonal to the plane defined by v and w
+            * Has magnitude equal to the area of the parallelogram between
+              v and w
+            * Direction obeys the right-hand rule
+
+        In the same way that the dot product corresponds geometrically to
+        treating one vector as a linear transformation to the number line,
+        the cross product has a similar geometric understanding: given a
+        linear transformation to the number line, the cross product returns
+        a vector. In that sense, think of it as a "reverse" dot product, in
+        three dimensions.
+
+        --------
 
         @params:
-            - round_to: num decimal places to round vector elements (int)
+            - b: a Vector
         @returns:
-            - the rounded vector (Vector)
+            - the cross product (a Vector)
         """
-        # Make sure round_to is an int
+        # Make sure w is a vector
         try:
-            assert isinstance(round_to, int)
+            assert isinstance(b, Vector)
         except AssertionError as e:
-            raise TypeError("A vector can only be rounded by an int, not %s."
-                            % type(round_to).__name__) from e
+            raise TypeError("You can only find the cross product" +
+                            " between two vectors, not a vector and %s."
+                            % type(v).__name__) from e
 
-        return Vector([round(x, round_to) for x in self.get_coordinates()])
+        # Make sure the dimensions of v and w match
+        try:
+            assert self.get_dimension() == b.get_dimension()
+        except AssertionError as e:
+            raise Exception("You can only find the cross product" +
+                            " of two vectors in" +
+                            " the same dimension.") from e
+
+        # Prepare different arrays based on the dimension
+        if self.get_dimension() == 3:
+            v = self.get_coordinates()
+            w = b.get_coordinates()
+        elif self.get_dimensions() == 2:
+            v = self.get_coordinates() + [0]
+            w = b.get_coordinates() + [0]
+        else:
+            raise Exception("This library only supports calculating" +
+                            " cross products in two and three dimensions.")
+
+        # Perform cross product algorithm
+        return Vector([(v[1] * w[2]) - (v[2] * w[1]),
+                       (v[2] * w[0]) - (v[0] * w[2]),
+                       (v[0] * w[1]) - (v[1] * w[0])])
+
+    def parallelogram_area(self, v):
+        """
+        Calculate the area of the parallelogram spanned by a vector and
+        another vector v.
+
+        The magnitude of the cross product v x w is equivalent to the area
+        of the parallelogram spanned by the two vectors. Hence:
+
+            ` |v x w| = |v| * |w| * sin(theta)`
+
+        Since |w| * sin(theta) gives us the height of the parallelogram.
+        """
+        cross = self.cross(v)
+        return cross.magnitude()
+
+    def triangle_area(self, v):
+        """
+        Calculate the area of the triangle spanned by a vector and another
+        vector v.
+
+        Like all triangles, the area of this triangle is equivalent to half
+        of the area of the parallelogram spanned by the two vectors.
+        """
+        return self.parallelogram_area(v) / 2

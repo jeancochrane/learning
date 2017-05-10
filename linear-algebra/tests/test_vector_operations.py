@@ -142,5 +142,27 @@ class TestVectorOperations(unittest.TestCase):
                         v.orthogonal_component(b))
         self.assertEqual(v, v_decomposed.round(3))
 
+    def test_cross_product(self):
+        """
+        Testing the calculation of cross products, as well as the areas
+        of parallelograms and triangles spanned by different vectors.
+        """
+        v = Vector([8.462, 7.893, -8.187])
+        w = Vector([6.984, -5.975, 4.778])
+        cross = v.cross(w)
+        self.assertEqual(cross.round(3), Vector([-11.205,
+                                                 -97.609,
+                                                 -105.685]))
+
+        v = Vector([-8.987, -9.838, 5.031])
+        w = Vector([-4.268, -1.861, -8.866])
+        par_area = v.parallelogram_area(w)
+        self.assertEqual(round(par_area, 3), 142.122)
+
+        v = Vector([1.5, 9.547, 3.691])
+        w = Vector([-6.007, 0.124, 5.772])
+        tri_area = v.triangle_area(w)
+        self.assertEqual(round(tri_area, 3), 42.565)
+
 if __name__ == '__main__':
     unittest.main()
