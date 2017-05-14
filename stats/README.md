@@ -9,8 +9,8 @@ Downey provides a convenient `thinkstats` package for performing a lot of the an
 ## Syllabus
 
 1. **Exploratory data analysis**
-    - [ ] Reading
-    - [ ] Exercises
+    - [X] Reading
+    - [X] Exercises
 
 2. **Distributions**
     - [ ] Reading
