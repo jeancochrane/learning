@@ -13,24 +13,24 @@ Downey provides a convenient `thinkstats` package for performing a lot of the an
     - [X] Exercises
 
 2. **Distributions**
-    - [ ] Reading
-    - [ ] Exercises
+    - [X] Reading
+    - [X] Exercises
 
 3. **Probability mass functions**
-    - [ ] Reading
-    - [ ] Exercises
+    - [X] Reading
+    - [X] Exercises
 
 4. **Cumulative distribution function**
-    - [ ] Reading
-    - [ ] Exercises
+    - [X] Reading
+    - [X] Exercises
 
 5. **Modeling distributions**
-    - [ ] Reading
-    - [ ] Exercises
+    - [X] Reading
+    - [X] Exercises
 
 6. **Probability density functions**
-    - [ ] Reading
-    - [ ] Exercises
+    - [X] Reading
+    - [X] Exercises
 
 7. **Relationships between variables**
     - [ ] Reading
@@ -38,8 +38,8 @@ Downey provides a convenient `thinkstats` package for performing a lot of the an
 
 8. **Estimation**
     - [ ] Reading
-    - [ ] Exercis
-es
+    - [ ] Exercises
+
 9. **Hypothesis testing**
     - [ ] Reading
     - [ ] Exercises
