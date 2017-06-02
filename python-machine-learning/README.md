@@ -1,0 +1,54 @@
+# Python Machine Learning
+
+Repo to track my progress through [Python Machine Learning](https://github.com/rasbt/python-machine-learning-book) by Sebastian Raschka.
+
+- [X] 1. Giving Computres the Ability to Learn from Data
+    - [X] Reading
+- [ ] 2. Training Machine Learning Algorithms for Classification
+    - [ ] Reading
+    - [ ] Notes
+    - [ ] Exercises
+- [ ] 3. A Tour of Machine Learning Classifiers Using Scikit-Learn
+    - [ ] Reading
+    - [ ] Notes
+    - [ ] Exercises
+- [ ] 4. Building Good Training Sets – Data Pre-Processing
+    - [ ] Reading
+    - [ ] Notes
+    - [ ] Exercises
+- [ ] 5. Compressing Data via Dimensionality Reduction
+    - [ ] Reading
+    - [ ] Notes
+    - [ ] Exercises
+- [ ] 6. Learning Best Practices for Model Evaluation and Hyperparameter Optimization
+    - [ ] Reading
+    - [ ] Notes
+    - [ ] Exercises
+- [ ] 7. Combining Different Models for Ensemble Learning
+    - [ ] Reading
+    - [ ] Notes
+    - [ ] Exercises
+- [ ] 8. Applying Machine Learning to Sentiment Analysis
+    - [ ] Reading
+    - [ ] Notes
+    - [ ] Exercises
+- [ ] 9. Embedding a Machine Learning Model into a Web Application
+    - [ ] Reading
+    - [ ] Notes
+    - [ ] Exercises
+- [ ] 10. Predicting Continuous Target Variables with Regression Analysis
+    - [ ] Reading
+    - [ ] Notes
+    - [ ] Exercises
+- [ ] 11. Working with Unlabeled Data – Clustering Analysis
+    - [ ] Reading
+    - [ ] Notes
+    - [ ] Exercises
+- [ ] 12. Training Artificial Neural Networks for Image Recognition
+    - [ ] Reading
+    - [ ] Notes
+    - [ ] Exercises
+- [ ] 13. Parallelizing Neural Network Training via Theano
+    - [ ] Reading
+    - [ ] Notes
+    - [ ] Exercises
