@@ -5,8 +5,8 @@ Repo to track my progress through [Python Machine Learning](https://github.com/r
 - [X] 1. Giving Computres the Ability to Learn from Data
     - [X] Reading
 - [ ] 2. Training Machine Learning Algorithms for Classification
-    - [ ] Reading
-    - [ ] Notes
+    - [X] Reading
+    - [X] Notes
     - [ ] Exercises
 - [ ] 3. A Tour of Machine Learning Classifiers Using Scikit-Learn
     - [ ] Reading
