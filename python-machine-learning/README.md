@@ -6,8 +6,8 @@ Repo to track my progress through [Python Machine Learning](https://github.com/r
     - [X] Reading
 - [ ] 2. Training Machine Learning Algorithms for Classification
     - [X] Reading
-    - [X] Notes
-    - [ ] Exercises
+    - [X] [Notes](./code/ch01notes.ipynb)
+    - [X] [Exercises](./code/ch01exercises.ipynb)
 - [ ] 3. A Tour of Machine Learning Classifiers Using Scikit-Learn
     - [ ] Reading
     - [ ] Notes
