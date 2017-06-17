@@ -4,13 +4,13 @@ Repo to track my progress through [Python Machine Learning](https://github.com/r
 
 - [X] 1. Giving Computres the Ability to Learn from Data
     - [X] Reading
-- [ ] 2. Training Machine Learning Algorithms for Classification
+- [X] 2. Training Machine Learning Algorithms for Classification
     - [X] Reading
-    - [X] [Notes](./code/ch01notes.ipynb)
-    - [X] [Exercises](./code/ch01exercises.ipynb)
+    - [X] [Notes](./code/ch02notes.ipynb)
+    - [X] [Exercises](./code/ch02exercises.ipynb)
 - [ ] 3. A Tour of Machine Learning Classifiers Using Scikit-Learn
-    - [ ] Reading
-    - [ ] Notes
+    - [X] Reading
+    - [X] [Notes](./code/ch03notes.ipynb)
     - [ ] Exercises
 - [ ] 4. Building Good Training Sets – Data Pre-Processing
     - [ ] Reading
