@@ -11,7 +11,7 @@ Repo to track my progress through [Python Machine Learning](https://github.com/r
 - [ ] 3. A Tour of Machine Learning Classifiers Using Scikit-Learn
     - [X] Reading
     - [X] [Notes](./code/ch03notes.ipynb)
-    - [ ] Exercises
+    - [X] [Exercises](./code/ch03exercises.ipynb)
 - [ ] 4. Building Good Training Sets – Data Pre-Processing
     - [ ] Reading
     - [ ] Notes
