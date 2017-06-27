@@ -10,6 +10,7 @@
 - Lisa Servon, "The Unbanking of America: How the New Middle Class Survives" (2017) 
 - Arnold Hirsch, "Making the Second Ghetto: Race and Housing in Chicago 1940-1960" (1998)
 - E. Gabriella Coleman, "Coding Freedom: The Ethics and Aesthetics of Hacking" (2013)
+- Peter Frase, "Four Futures: Life After Capitalism" (2016)
 
 ### Fiction
 
