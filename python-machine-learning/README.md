@@ -14,7 +14,7 @@ Repo to track my progress through [Python Machine Learning](https://github.com/r
     - [X] [Exercises](./code/ch03exercises.ipynb)
 - [ ] 4. Building Good Training Sets – Data Pre-Processing
     - [X] Reading
-    - [ ] Notes
+    - [X] [Notes](./code/ch04notes.ipynb)
     - [ ] Exercises
 - [ ] 5. Compressing Data via Dimensionality Reduction
     - [ ] Reading
