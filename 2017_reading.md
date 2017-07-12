@@ -11,6 +11,7 @@
 - Arnold Hirsch, "Making the Second Ghetto: Race and Housing in Chicago 1940-1960" (1998)
 - E. Gabriella Coleman, "Coding Freedom: The Ethics and Aesthetics of Hacking" (2013)
 - Peter Frase, "Four Futures: Life After Capitalism" (2016)
+- Eula Biss, "On Immunity: An Inoculation" (2014)
 
 ### Fiction
 
@@ -21,6 +22,7 @@
 - Carl Bybee, "Can Democracy Survive in the Post-Factual Age?: A Return to the Lippmann-Dewey Debate About the Politics of News" (1999)
 - Philip Converse, "The nature of belief systems in mass publics" (1964)
 - Eve Tuck, "Suspending Damage: A Letter to Communities" (2006)
+- Michael Castelle, "Relational and Non-Relational Models in the Entextualization of Bureaucracy" (2013)
 
 ## Want-to-read
 
