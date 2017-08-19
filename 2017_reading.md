@@ -12,10 +12,11 @@
 - E. Gabriella Coleman, "Coding Freedom: The Ethics and Aesthetics of Hacking" (2013)
 - Peter Frase, "Four Futures: Life After Capitalism" (2016)
 - Eula Biss, "On Immunity: An Inoculation" (2014)
+- Philip Agre, "Computation and Human Experience" (1997)
 
 ### Fiction
 
-- Ada Palmer, "Too Like the Lightning" 
+- Ada Palmer, "Too Like the Lightning" (2016)
 
 ## Articles
 
@@ -29,4 +30,3 @@
 - Katha Pollitt, "Pro: Reclaiming Abortion Rights"
 - Isabel Wilkerson, "The Warmth of Other Suns"
 - Amy Starecheski, "Ours to Lose: When Squatters Became Homeowners in New York City"
-- Philip Agre, "Computation and Human Experience"
