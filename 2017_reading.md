@@ -24,6 +24,8 @@
 - Philip Converse, "The nature of belief systems in mass publics" (1964)
 - Eve Tuck, "Suspending Damage: A Letter to Communities" (2006)
 - Michael Castelle, "Relational and Non-Relational Models in the Entextualization of Bureaucracy" (2013)
+- W. Bernard Carlson, "The Telephone as Political Instrument: Gardiner Hubbard"
+  and the Formation of the Middle Class in America, 1875-1880" (2001)
 
 ## Want-to-read
 
