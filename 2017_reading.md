@@ -26,9 +26,12 @@
 - Michael Castelle, "Relational and Non-Relational Models in the Entextualization of Bureaucracy" (2013)
 - W. Bernard Carlson, "The Telephone as Political Instrument: Gardiner Hubbard"
   and the Formation of the Middle Class in America, 1875-1880" (2001)
+- Eric Schatzberg, "Culture and Technology in the City: Opposition to
+  Mechanized Street Transportation in Late-Nineteenth-Century America" (2001)
 
 ## Want-to-read
 
 - Katha Pollitt, "Pro: Reclaiming Abortion Rights"
 - Isabel Wilkerson, "The Warmth of Other Suns"
 - Amy Starecheski, "Ours to Lose: When Squatters Became Homeowners in New York City"
+- Misha Glouberman, "Chairs Are Where the People Go"
