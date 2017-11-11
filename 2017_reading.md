@@ -1,8 +1,15 @@
 # 2017 Reading List
 
-## Books
+## In progress
 
-### Nonfiction
+- William Cronon, "Nature's Metropolis: Chicago and the Great West" (1992)
+- Cathy O'Neill, "Weapons of Math Destruction"
+
+## Done
+
+### Books
+
+#### Nonfiction
 
 - Richard Taub, "Community Capitalism" (1988)
 - Danielle Allen, "Talking to Strangers: Anxieties of Citizenship Since Brown V. Board of Education" (2004)
@@ -13,12 +20,13 @@
 - Peter Frase, "Four Futures: Life After Capitalism" (2016)
 - Eula Biss, "On Immunity: An Inoculation" (2014)
 - Philip Agre, "Computation and Human Experience" (1997)
+- Sheila Heti and Misha Glouberman, "The Chairs Are Where the People Go" (2011)
 
-### Fiction
+#### Fiction
 
 - Ada Palmer, "Too Like the Lightning" (2016)
 
-## Articles
+### Papers
 
 - Carl Bybee, "Can Democracy Survive in the Post-Factual Age?: A Return to the Lippmann-Dewey Debate About the Politics of News" (1999)
 - Philip Converse, "The nature of belief systems in mass publics" (1964)
@@ -28,10 +36,5 @@
   and the Formation of the Middle Class in America, 1875-1880" (2001)
 - Eric Schatzberg, "Culture and Technology in the City: Opposition to
   Mechanized Street Transportation in Late-Nineteenth-Century America" (2001)
-
-## Want-to-read
-
-- Katha Pollitt, "Pro: Reclaiming Abortion Rights"
-- Isabel Wilkerson, "The Warmth of Other Suns"
-- Amy Starecheski, "Ours to Lose: When Squatters Became Homeowners in New York City"
-- Misha Glouberman, "Chairs Are Where the People Go"
+- Randall Lewis and Justin Rao, "On the Near Impossibility of Measuring the
+  Returns to Advertising" (2013)
