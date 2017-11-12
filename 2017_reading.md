@@ -3,7 +3,10 @@
 ## In progress
 
 - William Cronon, "Nature's Metropolis: Chicago and the Great West" (1992)
-- Cathy O'Neill, "Weapons of Math Destruction"
+- Cathy O'Neill, "Weapons of Math Destruction" (2016)
+- Harold Abelson and Gerald Jay Sussman with Julie Sussman, ["Structure and
+  Interpretation of Computer Programs"](https://mitpress.mit.edu/sicp/full-text/book/book.html)
+  (1996)
 
 ## Done
 
