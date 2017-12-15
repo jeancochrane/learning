@@ -12,3 +12,8 @@
           guess
           (try next))))
   (try first-guess))
+
+(define (avg x y) (/ (+ x y) 2))
+
+(define (average-damp f)
+  (lambda (x) (avg x (f x))))
