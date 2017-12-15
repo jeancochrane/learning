@@ -2,7 +2,7 @@
   ;;; Compute and display Pascal's triangle up to row `n`
   (define (pascal row col)
     ;;; Calculate a value in Pascal's triangle for a given row and col
-    (cond ((or (= col 1) (= row col)) 1)  ; Edges of the triangle
+    (cond ((= row col) 1)  ; Edges of the triangle
           ((or (< col 1) (> col row)) 0)  ; Ignore values beyond triangle bounds
           (else (+ (pascal (- row 1) (- col 1))  ; Preceding value on the left
                    (pascal (- row 1) col)))))    ; Preceding value on the right
@@ -23,21 +23,25 @@
                        (build-triangle n (+ count 1)))))
   (display (build-triangle n 1)))
 
+
 (define (pascal-iter n)
   ;;; Compute and display Pascal's triangle up to row `n` -- iteratively!
   (define (list-to-string str lst)
-    (if (null? (cdr lst))
-        str
-        (list-to-string (string-append str " " (car lst)) (cdr lst))))
+    (cond ((null? lst) str)
+          ((string=? str "") (list-to-string (string (car lst)) (cdr lst)))
+          (else (list-to-string (string-append str " " (string (car lst))) (cdr lst)))))
   (define (next-row curr-coefs row)
-    (if (null? (cdr row))
-        (append curr-coefs (list (car row))) ; Make sure to append the trailing 0
-        (next-row (append curr-coefs (list (+ (car row) (cadr row))))
-                  (cdr row))))
+    (cond ((null? (cdr row)) ; End of the list: make sure to append last elem
+             (append curr-coefs (list (car row))))
+          ((null? curr-coefs) ; Start of the list: make sure to append first elem
+             (next-row (list (car row)) row))
+          (else
+             (next-row (append curr-coefs (list (+ (car row) (cadr row))))
+                       (cdr row)))))
   (define (build-triangle str lst n count)
-    (let (next-str (string-append str "\n" (list-to-string "" (next-row (list) lst)))
+    (let ((next-str (string-append str "\n" (list-to-string "" (next-row (list) lst)))))
       (if (= count n)
           next-str
-          (build-triangle next-str (next-row (list) lst) n (+ count 1))))))
-  (let (init-value (list 0 1 0))
+          (build-triangle next-str (next-row (list) lst) n (+ count 1)))))
+  (let ((init-value (list 0 1 0)))
     (display (build-triangle (list-to-string "" init-value) init-value n 1))))
