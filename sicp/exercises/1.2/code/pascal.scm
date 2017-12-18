@@ -27,8 +27,8 @@
 (define (pascal-iter n)
   ;;; Compute and display Pascal's triangle up to row `n` -- iteratively!
   (define (list-to-string str lst)
-    (cond ((null? lst) str)
-          ((string=? str "") (list-to-string (string (car lst)) (cdr lst)))
+    (cond ((null? (cdr lst)) str)
+          ((string=? str "") (list-to-string (string (cadr lst)) (cdr (cdr lst))))
           (else (list-to-string (string-append str " " (string (car lst))) (cdr lst)))))
   (define (next-row curr-coefs row)
     (cond ((null? (cdr row)) ; End of the list: make sure to append last elem
