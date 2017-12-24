@@ -2,8 +2,6 @@
 
 ## In progress
 
-- Fred Turner, "From Counterculture to Cyberculture: Stewart Brand, the Whole Earth Network,
-  and the Rise of Digital Utopianism" (2006)
 - Harold Abelson and Gerald Jay Sussman with Julie Sussman, ["Structure and
   Interpretation of Computer Programs"](https://mitpress.mit.edu/sicp/full-text/book/book.html)
   (1996)
@@ -26,6 +24,10 @@
 - Sheila Heti and Misha Glouberman, "The Chairs Are Where the People Go" (2011)
 - William Cronon, "Nature's Metropolis: Chicago and the Great West" (1992)
 - Eliezer Yudkowsy, "Inadequate Equilibria" (2017)
+- Fred Turner, "From Counterculture to Cyberculture: Stewart Brand, the Whole Earth Network,
+  and the Rise of Digital Utopianism" (2006)
+- Ingrid Burrington, "Networks of New York: An Illustrated Field Guide to Urban
+  Internet Infrastructure" (2016)
 
 #### Fiction
 
