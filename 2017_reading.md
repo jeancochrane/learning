@@ -28,6 +28,7 @@
   and the Rise of Digital Utopianism" (2006)
 - Ingrid Burrington, "Networks of New York: An Illustrated Field Guide to Urban
   Internet Infrastructure" (2016)
+- Shannon Mattern, "Deep Mapping the Media City" (2015)
 
 #### Fiction
 
@@ -45,3 +46,5 @@
   Mechanized Street Transportation in Late-Nineteenth-Century America" (2001)
 - Randall Lewis and Justin Rao, "On the Near Impossibility of Measuring the
   Returns to Advertising" (2013)
+- David Harvey, "From Managerialism to Entrepreneurialism: The Transformation
+  in Urban Governance in Late Capitalism" (1989) [(PDF)](http://socasis.ubbcluj.ro/urbana/upload/syllabus2010/04b.Harvey(1973).pdf)
