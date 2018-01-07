@@ -1,0 +1,10 @@
+(define (same-parity a . z)
+  (define (parity-list con? res lst)
+    (cond ((null? lst) res)
+          ((con? (car lst))
+            (parity-list con? (append res (list (car lst))) (cdr lst)))
+          (else
+            (parity-list con? res (cdr lst)))))
+  (if (even? a)
+      (parity-list even? (list a) z)
+      (parity-list odd? (list a) z)))
