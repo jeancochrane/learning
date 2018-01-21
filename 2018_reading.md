@@ -16,3 +16,10 @@
 
 - Thomas Kuhn, [The Structure of Scientific
 Revolutions](http://www.press.uchicago.edu/ucp/books/book/chicago/S/bo13179781.html)
+
+- Sarah Schulman, [Conflict Is Not Abuse](http://www.arsenalpulp.com/bookinfo.php?index=449)
+
+### Articles
+
+- Lauren Berlant, [Slow
+Death](http://users.clas.ufl.edu/burt/%20Tempest%20Drown%20before%20reading/lauren%20Berlant%20slow%20death.pdf)
