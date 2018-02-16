@@ -19,6 +19,9 @@ Revolutions](http://www.press.uchicago.edu/ucp/books/book/chicago/S/bo13179781.h
 
 - Sarah Schulman, [Conflict Is Not Abuse](http://www.arsenalpulp.com/bookinfo.php?index=449)
 
+- Daniel M. Frischmann, [Infrastructure: The Social Value of Shared
+Resources](https://global.oup.com/academic/product/infrastructure-9780199895656?cc=us&lang=en&)
+
 ### Articles
 
 - Lauren Berlant, [Slow
