@@ -2,8 +2,8 @@
 
 ## In progress
 
-- Richard Rothstein, [The Color of Law: A Forgotten History of How Our
-  Government Segregated America](https://www.dukeupress.edu/The-Problem-with-Work/)
+- Stanley Lieberson, ["Making it Count: The Improvement of Social Research
+  and Theory"](https://www.ucpress.edu/book/9780520060371/making-it-count)
 
 - Harold Abelson and Gerald Jay Sussman with Julie Sussman, [Structure and
   Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/full-text/book/book.html)
@@ -29,6 +29,9 @@ and Postwork Imaginaries](https://www.dukeupress.edu/The-Problem-with-Work/)
 
 - carla bergman and Nick Montgomery, [Joyful Militancy: Thriving Resistance in
 Toxic Times](https://joyfulmilitancy.com/)
+
+- Richard Rothstein, [The Color of Law: A Forgotten History of How Our
+  Government Segregated America](https://www.dukeupress.edu/The-Problem-with-Work/)
 
 ### Articles
 
