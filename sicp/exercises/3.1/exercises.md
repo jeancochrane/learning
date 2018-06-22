@@ -18,6 +18,15 @@ generates accumulators, each maintaining an independent sum. The input to
 25
 ```
 
+**Answer 3.1**
+
+```scheme
+(define (make-accumulator init)
+  (lambda (x)
+    (set! init (+ init x))
+    init))
+```
+
 **Exercise 3.2**
 
 In software-testing applications, it is useful to be able to count the number of

@@ -17,10 +17,11 @@
 
 - `set!` is Scheme's assignment operator
 
-- Local state is accessible only to the method to which it pertains
+- Local state is accessible only to the method (object?) to which it pertains
     - "Encapsulation", or "the hiding principle": modular systems protect as
       much as much as possible from the other parts of the system
 
 - Assignment means that the substitution model no longer holds (?)
-
- 
+    - i.e., if variables can change, we can't simply substitute the formal
+      parameters into the method and evaluate (something like that?)
+        - Anyway, more on this in a later section 
