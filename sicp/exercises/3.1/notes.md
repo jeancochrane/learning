@@ -25,3 +25,28 @@
     - i.e., if variables can change, we can't simply substitute the formal
       parameters into the method and evaluate (something like that?)
         - Anyway, more on this in a later section 
+
+## 3.1.2: The Benefits of Introducing Assignment
+
+- Example: random number generators with and without assignment
+    - Without assignment: caller must keep track of the seed and its successive
+      values
+    - With assignment: seed can be encapsulated in the random-generating method
+
+- Example application: Monte Carlo simulation of pi
+    - Monte carlo refresher: Estimate the value of a constant by drawing
+      experiments at random and using associated probabilities that include that
+      constant
+        - e.g. two integers chosen at random will have no factors in common with
+          a probability of 6/pi^2 -- hence we can draw random integers and
+          compute their greatest common divisor many times over, using the
+          fraction of successes to estimate pi
+
+    - Without state assignment, the procedure that runs the trials must
+      continually compute and keep track of the random seeds
+        - Not only is this more verbose and harder to read, but it tightly
+          couples two components of the system that aren't interdependent on one
+          another
+
+- In spite of these points, stateful procedures are not universally more modular
+  than stateless procedures! We'll see some examples in the next section

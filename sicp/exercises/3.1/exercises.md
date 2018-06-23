@@ -70,3 +70,22 @@ we could make a monitored version of the `sqrt` procedure:
             (f arg))))
     mf)
 ```
+
+**Exercise 3.5**
+
+Implement Monte Carlo integration as a procedure `estimate-integral` that takes as
+arguments a predicate `P`, upper and lower bounds `x1`, `x2`, `y1`, and `y2` for the
+rectangle, and the number of trials to perform in order to produce the estimate.
+Your procedure should use the same `monte-carlo` procedure that was used above to
+estimate `pi`. Use your `estimate-integral` to produce an estimate of `pi` by measuring the
+area of a unit circle.
+
+**Exercise 3.6**
+
+It is useful to be able to reset a random-number generator to produce a sequence
+starting from a given value. Design a new `rand` procedure that is called with an
+argument that is either the symbol `generate` or the symbol `reset` and behaves as
+follows: `(rand 'generate)` produces a new random number; `((rand 'reset)
+<new-value>)` resets the internal state variable to the designated `<new-value>`.
+Thus, by resetting the state, one can generate repeatable sequences. These are
+very handy to have when testing and debugging programs that use random numbers.
