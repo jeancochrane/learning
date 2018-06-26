@@ -80,6 +80,42 @@ Your procedure should use the same `monte-carlo` procedure that was used above t
 estimate `pi`. Use your `estimate-integral` to produce an estimate of `pi` by measuring the
 area of a unit circle.
 
+**Answer 3.5**
+
+```scheme
+(define (estimate-integral P x1 x2 y1 y2)
+  ;;;
+  ;;; Estimate an integral using Monte Carlo simulations.
+  ;;;
+  ;;; Arguments:
+  ;;;   - P: Predicate P(x,y) -- procedure to determine if the coordinates of a
+  ;;;        trial result are within the bounds of the function to integrate
+  ;;;   - x1, x2, y1, y2: Bounds of a rectangle that contains the region in question
+  ;;;
+  (define (experiment)
+    (let ((x (random-in-range x1 x2))
+          (y (random-in-range y1 y2)))
+      (P x y)))
+  (monte-carlo 10000 experiment))
+
+
+(define (estimate-pi)
+  ;;;
+  ;;; Estimate pi by using the `estimate-integral` procedure to run a
+  ;;; Monte Carlo simulation on the unit circle.
+  ;;;
+  (define (P x y)
+   (let ((r (square (+ (square x)
+                       (square y)))))
+     (>= 1 r)))
+  (define x1 -1.0)
+  (define x2 1.0)
+  (define y1 -1.0)
+  (define y2 1.0)
+  (let ((area-of-square (* (+ (abs x1) (abs x2)) (+ (abs y1) (abs y2)))))
+    (* area-of-square (estimate-integral P x1 x2 y1 y2))))
+```
+
 **Exercise 3.6**
 
 It is useful to be able to reset a random-number generator to produce a sequence
