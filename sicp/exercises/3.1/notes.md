@@ -50,3 +50,60 @@
 
 - In spite of these points, stateful procedures are not universally more modular
   than stateless procedures! We'll see some examples in the next section
+
+## 3.1.3: The Costs of Introducing Assignment
+
+- With assignment, the substitution model of procedure application no longer
+  holds
+    - i.e. without assignment, two evaluations of a procedure will always
+      produce the same result; with assignment, this is no longer strictly true
+        - No assignment = _functional programming_
+
+- Core of the problem: substitution assumes that symbols are _names of values_
+    - Assignment, however, assumes that symbols are _places where a value is
+      stored_
+        - The first kind of symbol is immutable; the second can change! We have
+          to go and retrieve it whenever we want to know what its value is, we
+          can't simply substitute
+
+### Sameness and change
+
+- Introducing the capacity for change makes "sameness" hard to define
+    - e.g. two instances of the same (purely functional) procedure are "the same", but two instances of a class are not
+        - i.e. sameness can no longer mean "can be substituted for each other"
+    - This isn't the only definition of "sameness", it's just the simplest to
+      define; sameness that includes assignment is tricky
+
+- **Referentially transparent**: quality of a language where "equals can be
+  substituted for equals"
+    - `set!` violates this principle; makes it difficult to know when
+      expressions can be simplified
+
+- Deep insight: in the real world, "sameness" and "change" depend on each other for semantic
+  coherence
+    - i.e.: only way to tell if two objects are "the same" is to _change_ one
+      and watch if the other changes too; however, only way to tell if an object
+      has "changed" is to look at the _same_ object before and after
+      intervention
+
+- In programming, the intertwining of sameness and change comes up in
+  **aliasing**: the phenomenon of a single computation object having mutliple
+  names
+    - Aliasing makes analyzing code and finding bugs substantially more
+      difficult
+    - Basically: sharing state is hard
+
+- In sum: introducing assignment means introducing _change_, which alters our
+  definition of "sameness" such that it no longer means "two things that can be
+  functionally interchanged with one another" -- instead, it's more slippery,
+  and has to handle the fact that an object with state is "the same" over time,
+  even though its outputs change
+
+### Pitfalls of imperative programming
+
+- Programming with assignment is known as _imperative programming_
+
+- Imperative programming introduces a unique set of bugs
+    - Example: order of assignment can change the output
+        - With assignment, the programmer has to be careful that the correct
+          version of a variable is referenced at all times
